@@ -1,0 +1,22 @@
+{
+  "name": "analytics",
+  "version": "0.0.1",
+  "description": "Analytics container for Jumprope CMS cluster.",
+  "main": "index.js",
+  "author": "Davis Kimoto <davis.kimoto@gmail.com>",
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "nodemon src/index.js --exec babel-node",
+    "start-prod": "babel-node src/index.js",
+    "test": "npm run unit-test && npm run integration-test",
+    "unit-test": "mocha 'test/unit/**/*.js' --compilers js:babel-core/register",
+    "integration-test": "NODE_ENV=test mocha 'test/integration/**/*.js' --compilers js:babel-core/register --timeout 1000"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-env": "^1.5.1",
+    "chai": "^4.0.2",
+    "mocha": "^3.4.2"
+  },
+  "dependencies": {}
+}
